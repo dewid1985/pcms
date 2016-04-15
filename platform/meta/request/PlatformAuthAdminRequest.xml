@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformAuthAdminRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="login" type="String" size="32" required="true" />
+                <property name="md5Password" type="String" size="256" required="true" />
+                <property name="userIp" type="String" size="15" required="false" />
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersUserInfo" table="users.user_info">
+            <properties>
+                <identifier name="id"/>
+                <property name="user" column="user_id" type="PlatformUsersUser" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="lastName" type="String" size="64" required="true"/>
+                <property name="firstName" type="String" size="64" required="true"/>
+                <property name="middleName" type="String" size="64" required="true"/>
+                <property name="birthday" type="TimestampTZ" required="true"/>
+                <property name="settings" type="Hstore" required="true"/>
+                <property name="openId" type="Boolean" required="true"/>
+                <property name="registredAt" type="TimestampTZ" required="true"/>
+                <property name="createdAt" type="TimestampTZ" required="true"/>
+                <property name="registred" type="Boolean" required="true"/>
+                <property name="lastLogin" type="TimestampTZ" required="false"/>
+                <property name="signature" type="String" size="256" required="false"/>
+                <property name="preview" type="Boolean" required="true"/>
+                <property name="previewImageTypeId" type="String" required="true"/>
+                <property name="phone" type="String" required="false"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

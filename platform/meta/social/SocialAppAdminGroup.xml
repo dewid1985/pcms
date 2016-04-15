@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialAppAdminGroup" table="social.app_admin_group">
+            <properties>
+                <identifier name="id"/>
+                <property name="appAdmin" column="app_admin_id" type="PlatformSocialAppAdmin" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="name" column="name" type="String" required="true"/>
+                <property name="privacy" column="privacy"  type="String"/>
+                <property name="groupId" column="group_id" type="BigInteger" required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialAppAdminPage" table="social.app_admin_pages">
+            <properties>
+                <identifier name="id"/>
+                <property name="appAdmin" column="app_admin_id" type="PlatformSocialAppAdmin" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="name" column="name" type="String" required="true"/>
+                <property name="category" column="category" type="String" />
+                <property name="pageId" column="page_id" type="BigInteger"/>
+                <property name="accessToken" column="access_token" type="String" required="true"/>
+                <property name="permissions" column="permissions" type="Hstore" relation="OneToOne"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersAdminCodeTypeEnum">
+            <properties>
+                <identifier name="id" />
+            </properties>
+
+            <pattern name="EnumClass" />
+        </class>
+    </classes>
+</metaconfiguration>

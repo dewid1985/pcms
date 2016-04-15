@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaCropImageOperationRequest" extends="ModuleMultimediaRequest">
+            <properties>
+                <property name="id" type="Integer"/>
+                <property name="images" type="PlatformMultimediaImages" relation="OneToOne" fetch="lazy"/>
+                <property name="imagesSize" type="PlatformMultimediaImagesSize" relation="OneToOne" fetch="lazy"/>
+                <property name="path" type="String"/>
+                <property name="coordinateX" type="Float" required="true"/>
+                <property name="coordinateY" type="Float" required="true"/>
+                <property name="width" type="Float" required="true"/>
+                <property name="height" type="Float" required="true"/>
+                <property name="croppedAt" type="TimestampTZ"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

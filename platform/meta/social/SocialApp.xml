@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialApp" table="social.app">
+            <properties>
+                <identifier name="id"/>
+                <property name="admin" column="created_admin_id" type="PlatformUsersAdmin" required="true" fetch="lazy"
+                          relation="OneToOne"/>
+                <property name="name" column="name" type="String" size="32" required="true"/>
+                <property name="socialNetwork" column="social_network" type="PlatformSocialNameEnum" relation="OneToOne"
+                          required="true"/>
+                <property name="appId" column="app_id" type="BigInteger" required="true"/>
+                <property name="appSecretKey" column="app_secret_key" type="String" required="true"/>
+                <property name="createdAt" column="created_at" type="TimestampTZ" required="true"/>
+                <property name="picture" column="picture" type="Boolean" default="false"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

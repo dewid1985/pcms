@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+
+    <!-- Schema Common -->
+    <include file="common/Article.xml"/>
+    <include file="common/ArticleDraft.xml"/>
+    <include file="common/ArticlePublished.xml"/>
+
+    <include file="common/News.xml"/>
+    <include file="common/NewsDraft.xml"/>
+    <include file="common/NewsPublished.xml"/>
+
+    <include file="common/Project.xml"/>
+    <include file="common/Module.xml"/>
+    <include file="common/ProjectModule.xml"/>
+    <include file="common/Rubric.xml"/>
+    <include file="common/RubricData.xml"/>
+
+    <!-- Enum -->
+    <include file="enum/AdminCodeTypeEnum.xml"/>
+    <include file="enum/PlatfromSocialNameEnum.xml"/>
+
+    <!-- Schema Logs -->
+    <include file="logs/AdminAuthLogs.xml"/>
+
+    <!-- Request -->
+
+    <!--Module Articles -->
+    <include file="request/ModuleArticleRequest/ModuleArticleAddOperationRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleDropOperationRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleGetOperationRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleSaveOperationRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleSearchOperationRequest.xml"/>
+    <include file="request/ModuleArticleRequest/ModuleArticleAutoSaveOperationRequest.xml"/>
+
+    <!--Module News -->
+    <include file="request/ModuleNewsRequest/ModuleNewsAddOperationRequest.xml"/>
+    <include file="request/ModuleNewsRequest/ModuleNewsDropOperationRequest.xml"/>
+    <include file="request/ModuleNewsRequest/ModuleNewsGetOperationRequest.xml"/>
+    <include file="request/ModuleNewsRequest/ModuleNewsRequest.xml"/>
+    <include file="request/ModuleNewsRequest/ModuleNewsSaveOperationRequest.xml"/>
+    <include file="request/ModuleNewsRequest/ModuleNewsSearchOperationRequest.xml"/>
+
+
+    <!--Module Rubrics-->
+    <include file="request/ModuleRubricsRequest/ModuleRubricsAddOperationRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsDropOperationRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsGetOperationRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsSaveOperationRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsGetAllListOperationRequest.xml"/>
+    <include file="request/ModuleRubricsRequest/ModuleRubricsSearchOperationRequest.xml"/>
+
+    <!--Module Multimedia -->
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaRequest.xml"/>
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaAddImageOperationRequest.xml"/>
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaSearchOperationRequest.xml"/>
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaGetImageOperationRequest.xml"/>
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaCropImageOperationRequest.xml"/>
+    <include file="request/ModuleMultimediaRequest/ModuleMultimediaGetPreviewListRequest.xml"/>
+
+    <include file="request/PlatformBaseRequest.xml"/>
+    <include file="request/PlatformAuthAdminRequest.xml"/>
+    <include file="request/PlatformAdminAuthLogsRequest.xml"/>
+    <include file="request/PlatformSmsRequest.xml"/>
+    <include file="request/PlatformSendCodeRequest.xml"/>
+    <include file="request/PlatformAdminCodeRequest.xml"/>
+    <include file="request/PlatfromSocialAppRequest.xml"/>
+
+    <!-- Social -->
+    <include file="request/VkRequest.xml"/>
+
+    <!-- Response -->
+
+    <!-- Module Articles -->
+    <include file="response/ModuleArticleResponse/ModuleArticleResponse.xml"/>
+    <include file="response/ModuleArticleResponse/ModuleArticleAddOperationResponse.xml"/>
+    <include file="response/ModuleArticleResponse/ModuleArticleGetOperationResponse.xml"/>
+    <include file="response/ModuleArticleResponse/ModuleArticleSaveOperationResponse.xml"/>
+    <include file="response/ModuleArticleResponse/ModuleArticleSearchOperationResponse.xml"/>
+    <include file="response/ModuleArticleResponse/ModuleArticleAutoSaveOperationResponse.xml"/>
+
+    <!-- Module News -->
+    <include file="response/ModuleNewsResponse/ModuleNewsResponse.xml"/>
+    <include file="response/ModuleNewsResponse/ModuleNewsAddOperationResponse.xml"/>
+    <include file="response/ModuleNewsResponse/ModuleNewsGetOperationResponse.xml"/>
+    <include file="response/ModuleNewsResponse/ModuleNewsSaveOperationResponse.xml"/>
+    <include file="response/ModuleNewsResponse/ModuleNewsSearchOperationResponse.xml"/>
+
+    <!-- Module Rubrics-->
+    <include file="response/ModuleRubricsResponse/ModuleRubricsAddOperationResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsDropOperationResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsGetOperationResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsSaveOperationResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsGetAllListOperationResponse.xml"/>
+    <include file="response/ModuleRubricsResponse/ModuleRubricsSearchOperationsResponse.xml"/>
+
+    <!--Module Multimedia -->
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaResponse.xml"/>
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaAddImageOperationResponse.xml"/>
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaSearchOperationResponse.xml"/>
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaGetImageOperationResponse.xml"/>
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaCropImageOperationResponse.xml"/>
+    <include file="response/ModuleMultimediaResponse/ModuleMultimediaGetPreviewListResponse.xml"/>
+
+    <include file="response/PlatformBaseResponse.xml"/>
+    <include file="response/PlatformAuthAdminResponse.xml"/>
+    <include file="response/PlatformSmsResponse.xml"/>
+
+
+    <!-- Social-->
+    <include file="response/VkResponse.xml"/>
+
+
+    <!-- Schema Users -->
+    <include file="users/Admin.xml"/>
+    <include file="users/AdminCode.xml"/>
+    <include file="users/AdminProfile.xml"/>
+    <include file="users/AdminRole.xml"/>
+
+    <include file="users/AuthCommon.xml"/>
+    <include file="users/AuthType.xml"/>
+
+    <include file="users/Role.xml"/>
+
+    <include file="users/UserRegistrationFacts.xml"/>
+    <include file="users/User.xml"/>
+    <include file="users/UserInfo.xml"/>
+
+    <include file="users/ModuleOperation.xml"/>
+
+    <include file="users/BlackIpList.xml"/>
+    <include file="users/WhiteIpList.xml"/>
+
+    <!-- Schema Multimedia-->
+    <include file="multimedia/Images.xml"/>
+    <include file="multimedia/CroppedImages.xml"/>
+    <include file="multimedia/ImagesSize.xml"/>
+
+
+    <!--Unsoreted Images-->
+    <include file="unsorted/MultimediaUnsorted.xml"/>
+
+    <!-- Schema Social -->
+    <include file="social/SocialApp.xml"/>
+    <include file="social/SocialAppAdmin.xml"/>
+    <include file="social/SocialAppAdminGroup.xml"/>
+    <include file="social/SocialAppAdminPages.xml"/>
+    <include file="social/SocialFlow.xml"/>
+    <include file="social/SocialFlowGroups.xml"/>
+    <include file="social/SocialFlowPages.xml"/>
+    <include file="social/SocialPublishedLink.xml"/>
+    <include file="social/SocialPublishedData.xml"/>
+
+</metaconfiguration>

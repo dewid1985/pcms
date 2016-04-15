@@ -1,0 +1,43 @@
+<?php
+/**@var PartViewer $partViewer */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Потоки</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bars fa-fw"></i>
+                Список потоков
+                <a href="<?php echo Project::getBaseUrl() . 'social/flow/new' ?>" class="btn btn-default pull-right">
+                    <i class="fa fa-plus"></i> Создать поток
+                </a>
+            </div>
+            <div class="panel-body">
+                <table id="flows" class="table table-striped" width="100%">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Название потока</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>id</th>
+                        <th>Название потока</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $partViewer->view('social-flow/key')?>
+<?php $partViewer->view('layouts/footer'); ?>

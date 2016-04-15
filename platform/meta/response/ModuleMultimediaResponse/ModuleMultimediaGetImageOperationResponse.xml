@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaGetImageOperationResponse" extends="ModuleMultimediaResponse">
+            <properties>
+                <property name="imagesSizes" type="String" />
+                <property name="imagesPreviewSizes" type="PlatformMultimediaImagesSize" relation="OneToOne" fetch="lazy"/>
+                <property name="multimediaHost" type="String"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

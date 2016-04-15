@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformGetArticlesDataResponse" extends="PlatformBaseResponse">
+            <properties>
+                <property name="title"  type="String" required="true"/>
+                <property name="anons" type="String" required="true"/>
+                <property name="text" type="String" required="true"/>
+                <property name="metaDescription"  type="String"/>
+                <property name="metaKeywords" type="String" />
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

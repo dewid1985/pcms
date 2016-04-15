@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="VkRequest">
+            <properties>
+                <property name="method" type="String" required="true" />
+                <property name="accessToken" type="String" required="true"/>
+                <property name="groupId" type="String" />
+                <property name="friendsOnly" type="String"/>
+                <property name="fromGroup" type="Boolean" default="true"/>
+                <property name="message" type="String"/>
+                <property name="attachments" type="String"/>
+                <property name="imgUrl" type="String"/>
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

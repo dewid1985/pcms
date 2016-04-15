@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialFlowPages" table="social.flow_dimension_page">
+            <properties>
+                <identifier name="id"/>
+                <property name="flow" column="flow_id" type="PlatformSocialFlow" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="page" column="page_id" type="PlatformSocialAppAdminPage" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

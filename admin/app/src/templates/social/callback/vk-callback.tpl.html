@@ -1,0 +1,64 @@
+<?php
+/**@var PartViewer $partViewer */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php  $partViewer->view('menu/up_menu'); ?>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Администратор приложения</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p> Имя в социальной сети : <?php  echo $adminName?></p>
+                <p> ID : <?php echo  $adminId?></p>
+                <p> ID в социальной сети: <?php echo $socialAdminId?></p>
+                <p> Ключ доступа: <pre><?php echo $accessToken?></pre></p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <div class="row">
+        <?php if(!empty($groups)):?>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Страницы
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <pre>Добавьте необходимые группы!!!</pre>
+                    <div class="table table-responsive">
+                        <table id="social-group" class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Название</th>
+                                <th>Имя в урл</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php unset($groups->response[0]);?>
+                            <?php foreach($groups->response as $k => $v):?>
+                                <tr>
+                                    <td data-name="groupId"><?php echo  $v->gid ;?></td>
+                                    <td data-name="name"><?php echo  $v->name; ?></td>
+                                    <td data-name="privacy"><?php echo  $v->screen_name;?></td>
+                                    <td data-name="button"><button class="btn btn-primary" >Добавить</button></td>
+                                </tr>
+                            <?php endforeach;?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    <a href="<?php  echo Project::getBaseUrl()?>social/app/" class="btn btn-primary">Продолжить</a>
+                </div>
+            </div>
+        <?php endif;?>
+    </div>
+</div>
+<?php  $partViewer->view('layouts/footer'); ?>

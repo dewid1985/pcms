@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialPublishedLinkData" table="social.published_data">
+            <properties>
+                <identifier name="id"/>
+                <property name="publishedLink" column="published_link_id" type="PlatformSocialPublishedLink"
+                          relation="OneToOne" fetch="lazy" required="true"/>
+                <property name="appAdminPages" column="app_admin_pages_id" type="PlatformSocialAppAdminPage"
+                          relation="OneToOne" fetch="lazy" required="false"/>
+                <property name="appAdminGroup" column="app_admin_group_id" type="PlatformSocialAppAdminGroup"
+                          relation="OneToOne" fetch="lazy" required="false"/>
+                <property name="socialNetwork" column="social_network" type="PlatformSocialNameEnum"
+                          relation="OneToOne" required="true"/>
+                <property name="postId" column="post_id"  type="String" size="512"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

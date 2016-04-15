@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersUser" table="users.user">
+            <properties>
+                <identifier name="id" />
+                <property name="email" type="String" size="128" required="true" />
+                <property name="password" type="String"  size="256" required="true" />
+                <property name="nickname" type="String" size="32" required="false" />
+                <property name="deleted" type="Boolean" required="true" />
+                <property name="moderation" type="Boolean" required="true" />
+                <property name="banned" type="Boolean" required="false" />
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>

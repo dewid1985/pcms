@@ -1,0 +1,2470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.0-alpha2" last-position="0,0" last-zoom="0.8">
+<role name="missus"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="newpravda"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="redmine"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="pravda"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="bigcaucasus"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="moneytimes"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="pravdatv"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="medpulse"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="yoki"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="rusday_template"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="politonline"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="electorat"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="ecosever"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="dyilyshow"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="dailyshow"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="nationaljournal"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="newsinfo"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="rusday"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="engpravda"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="fark"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="gt"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="english_pravda"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="navrali"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="glavtema"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="lady"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="sovpol"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="fsci"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="osguvd"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="newsteam"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="bigness"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="context_search"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="new_missus"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="port_pravda"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="coreadmin"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="moneyday"
+      createdb="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="autokolonka"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="test_politonline"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="politonlinenew"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="pgsql"
+      superuser="true"
+      encrypted="true"
+      password="********"
+      sql-disabled="true">
+</role>
+
+<role name="pcms"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="pcms" encoding="UTF8" lc-collate="C" lc-ctype="C">
+	<role name="pgsql"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" protected="true" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="common" rect-visible="true" fill-color="#edcee7">
+	<role name="pcms"/>
+</schema>
+
+<schema name="users" rect-visible="true" fill-color="#5b6c00">
+	<role name="pcms"/>
+</schema>
+
+<table name="project">
+	<schema name="common"/>
+	<role name="pcms"/>
+	<position x="1603.17" y="2337.79"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="31"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="character varying" length="127"/>
+	</column>
+	<constraint name="project_pkey" type="pk-constr" table="common.project">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__project_name" type="uq-constr" table="common.project">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="user">
+	<schema name="users"/>
+	<position x="1203.08" y="1647.72"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="email" not-null="true">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="password" not-null="true">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="nickname">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="deleted" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<column name="moderation" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<column name="banned">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__user_id" type="pk-constr" table="users.user">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__user_emal" type="uq-constr" table="users.user">
+		<columns names="email" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="admin">
+	<schema name="users"/>
+	<position x="233.07" y="1479.25"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="login">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="password">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="email" not-null="true">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="phone" not-null="true">
+		<type name="varchar" length="16"/>
+	</column>
+	<column name="xmpp_account">
+		<type name="varchar" length="40"/>
+	</column>
+	<column name="blocked">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__admin" type="pk-constr" table="users.admin">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__admin_login" type="uq-constr" table="users.admin">
+		<columns names="login" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__admin_email" type="uq-constr" table="users.admin">
+		<columns names="email" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__admin_phone" type="uq-constr" table="users.admin">
+		<columns names="phone" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__xmpp_account" type="uq-constr" table="users.admin">
+		<columns names="xmpp_account" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<extension name="hstore" handles-type="true">
+	<schema name="users"/>
+</extension>
+
+<table name="user_info">
+	<schema name="users"/>
+	<position x="1555.82" y="1379.74"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="user_id" not-null="true">
+		<type name="integer"/>
+	</column>
+	<column name="last_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="first_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="middle_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="birthday" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="settings" not-null="true">
+		<type name="users.hstore"/>
+	</column>
+	<column name="open_id" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<column name="registred_at" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="registred" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<column name="last_login">
+		<type name="timestamptz"/>
+	</column>
+	<column name="signature">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="preview" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<column name="preview_image_type_id">
+		<type name="smallint"/>
+	</column>
+	<column name="phone">
+		<type name="varchar" length="13"/>
+	</column>
+	<constraint name="pk__user_info" type="pk-constr" table="users.user_info">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__user_id" type="uq-constr" table="users.user_info">
+		<columns names="user_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="admin_profile">
+	<schema name="users"/>
+	<position x="100.09" y="1204.88"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="last_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="first_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="middle_name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="password_expires_time" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="alias">
+		<type name="users.hstore"/>
+	</column>
+	<column name="settings">
+		<type name="users.hstore"/>
+	</column>
+	<column name="status">
+		<type name="varchar" length="256"/>
+	</column>
+	<constraint name="pk__admin_info" type="pk-constr" table="users.admin_profile">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__admin_info_admin_id" type="uq-constr" table="users.admin_profile">
+		<columns names="admin_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="auth_type">
+	<schema name="users"/>
+	<position x="1169.77" y="1475.57"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="settings">
+		<type name="users.hstore"/>
+	</column>
+	<constraint name="pk__auth_type" type="pk-constr" table="users.auth_type">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__auth_type_id" type="uq-constr" table="users.auth_type">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="auth_common">
+	<schema name="users"/>
+	<position x="1207.58" y="1256.92"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="user_info_id" not-null="true">
+		<type name="integer"/>
+	</column>
+	<column name="auth_type_id" not-null="true">
+		<type name="integer"/>
+	</column>
+	<column name="token" not-null="true">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="refresh_token">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="profile_url">
+		<type name="varchar" length="128"/>
+	</column>
+	<constraint name="pk__auth_common" type="pk-constr" table="users.auth_common">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="newsmaker">
+	<schema name="common"/>
+	<position x="457.38" y="2299.26"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="last_name">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="first_name">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="middle_name">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="job">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="job_title">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="job_phone">
+		<type name="integer"/>
+	</column>
+	<column name="home_phone">
+		<type name="integer"/>
+	</column>
+	<column name="mobile_phone">
+		<type name="integer"/>
+	</column>
+	<column name="info">
+		<type name="text"/>
+	</column>
+	<constraint name="pk__news_macker_id" type="pk-constr" table="common.newsmaker">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="module">
+	<schema name="common"/>
+	<position x="774.82" y="1966.46"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="64"/>
+	</column>
+	<constraint name="pk_module" type="pk-constr" table="common.module">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__module_name" type="uq-constr" table="common.module">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="module_operation">
+	<schema name="users"/>
+	<position x="572.86" y="1788.89"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="role_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="module_id">
+		<type name="smallint"/>
+	</column>
+	<constraint name="pk__module_operation" type="pk-constr" table="users.module_operation">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="project_module">
+	<schema name="common"/>
+	<position x="1160.94" y="1995.04"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="module_id">
+		<type name="smallint"/>
+	</column>
+	<column name="project_id">
+		<type name="smallint"/>
+	</column>
+	<column name="disabled" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk_project_module" type="pk-constr" table="common.project_module">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="role">
+	<schema name="users"/>
+	<position x="565.29" y="1697.57"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="32"/>
+	</column>
+	<constraint name="pk__admin_role" type="pk-constr" table="users.role">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="uk__admin_role_name" type="uq-constr" table="users.role">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="admin_role">
+	<schema name="users"/>
+	<position x="555.55" y="1599.17"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="admin_id">
+		<type name="smallint"/>
+	</column>
+	<column name="role_id">
+		<type name="smallint"/>
+	</column>
+</table>
+
+<index name="index__user_nickname" table="users.user"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="nickname"/>
+		</idxelement>
+</index>
+
+<index name="index__auth_common_user_info_id" table="users.auth_common"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="user_info_id"/>
+		</idxelement>
+</index>
+
+<index name="index__auth_common_auth_type_id" table="users.auth_common"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="auth_type_id"/>
+		</idxelement>
+</index>
+
+<index name="index__user_info_phone" table="users.user_info"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="phone"/>
+		</idxelement>
+</index>
+
+<index name="index__user_info_last_name" table="users.user_info"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="last_name"/>
+		</idxelement>
+</index>
+
+<index name="index__user_info_first_name" table="users.user_info"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="first_name"/>
+		</idxelement>
+</index>
+
+<index name="index__user_info_middle_name" table="users.user_info"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="middle_name"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_info_last_name" table="users.admin_profile"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="last_name"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_info_first_name" table="users.admin_profile"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="first_name"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_info_middle_name" table="users.admin_profile"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="middle_name"/>
+		</idxelement>
+</index>
+
+<table name="user_registration_facts">
+	<schema name="users"/>
+	<position x="1649.21" y="1814.36"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="user_id">
+		<type name="integer"/>
+	</column>
+	<column name="project_id">
+		<type name="smallint"/>
+	</column>
+	<column name="registred_at">
+		<type name="timestamptz"/>
+	</column>
+	<constraint name="pk_user_registration_facts" type="pk-constr" table="users.user_registration_facts">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index_project_title" table="common.project"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="title"/>
+		</idxelement>
+</index>
+
+<index name="index__module_operation_name" table="users.module_operation"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="name"/>
+		</idxelement>
+</index>
+
+<schema name="logs" rect-visible="true" fill-color="#cd2525">
+</schema>
+
+<table name="admin_auth_logs">
+	<schema name="logs"/>
+	<position x="699.63" y="726.25"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="system_user">
+		<type name="boolean"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="entry_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="login">
+		<type name="varchar"/>
+	</column>
+	<column name="password">
+		<type name="varchar"/>
+	</column>
+	<column name="ip">
+		<type name="varchar" length="15"/>
+	</column>
+	<column name="captcha">
+		<type name="varchar" length="16"/>
+	</column>
+	<column name="blocked_ip">
+		<type name="boolean"/>
+	</column>
+	<column name="date_blocking_ip">
+		<type name="timestamptz"/>
+	</column>
+	<column name="black_ip_list_id">
+		<type name="integer"/>
+	</column>
+	<column name="successful">
+		<type name="boolean"/>
+	</column>
+	<column name="white_ip_list_id">
+		<type name="integer"/>
+	</column>
+	<column name="admin_code_id">
+		<type name="smallint"/>
+	</column>
+	<constraint name="pk__admin_auth_logs" type="pk-constr" table="logs.admin_auth_logs">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="black_ip_list">
+	<schema name="users"/>
+	<position x="1565.08" y="1048.6"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="ip_address" not-null="true">
+		<type name="varchar" length="15"/>
+	</column>
+	<column name="expires" not-null="true">
+		<type name="timestamptz"/>
+	</column>
+	<column name="active" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__black_id_list" type="pk-constr" table="users.black_ip_list">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index__black_ip_list" table="users.black_ip_list"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="ip_address"/>
+		</idxelement>
+</index>
+
+<table name="white_ip_list">
+	<schema name="users"/>
+	<position x="1496.75" y="1181.1"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="ip_address" not-null="true">
+		<type name="varchar" length="15"/>
+	</column>
+	<column name="active" not-null="true">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__preferred_ip_adress" type="pk-constr" table="users.white_ip_list">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index__user_white_ip_list_ip_address" table="users.white_ip_list"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="ip_address"/>
+		</idxelement>
+</index>
+
+<table name="admin_code">
+	<schema name="users"/>
+	<position x="820.61" y="1424.79"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="code">
+		<type name="integer"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="active">
+		<type name="boolean"/>
+	</column>
+	<column name="type_id">
+		<type name="integer"/>
+	</column>
+	<column name="user_id">
+		<type name="integer"/>
+	</column>
+	<constraint name="pk__user_code" type="pk-constr" table="users.admin_code">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index__admin_auth_log" table="logs.admin_auth_logs"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="admin_id"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_auth_logs_black_ip_list_id" table="logs.admin_auth_logs"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="black_ip_list_id"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_auth_logs_white_ip_list_id" table="logs.admin_auth_logs"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="white_ip_list_id"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_auth_logs_user_code_id" table="logs.admin_auth_logs"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="admin_code_id"/>
+		</idxelement>
+</index>
+
+<index name="index__user_code_user_id" table="users.admin_code"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="user_id"/>
+		</idxelement>
+</index>
+
+<table name="article_draft">
+	<schema name="common"/>
+	<appended-sql><![CDATA[CREATE INDEX index_fti_articles_draft_title ON common.article_draft USING GIN (to_tsvector('utf8_russian', title));
+CREATE INDEX index_fti_articles_draft_anons ON common.article_draft USING GIN (to_tsvector('utf8_russian', anons));
+CREATE INDEX index_fti_articles_draft_text ON common.article_draft USING GIN (to_tsvector('utf8_russian', text));
+CREATE INDEX index_fti_articles_draft_meta_description ON common.article_draft USING GIN (to_tsvector('utf8_russian', meta_description));
+CREATE INDEX index_fti_articles_draft_meta_keywords ON common.article_draft USING GIN (to_tsvector('utf8_russian', meta_keywords));]]></appended-sql>
+	<position x="489.833" y="2785.84"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="article_id">
+		<type name="integer"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="anons">
+		<type name="varchar" length="1024"/>
+	</column>
+	<column name="text">
+		<type name="text"/>
+	</column>
+	<column name="author">
+		<type name="varchar"/>
+	</column>
+	<column name="meta_description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_keywords">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="rubrics">
+		<type name="users.hstore"/>
+	</column>
+	<column name="modified_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="preview">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="images">
+		<type name="users.hstore"/>
+	</column>
+	<constraint name="pk__article_draft" type="pk-constr" table="common.article_draft">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="article">
+	<schema name="common"/>
+	<position x="917.833" y="2372.89"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="project_id">
+		<type name="smallint"/>
+	</column>
+	<column name="article_draft_id">
+		<type name="integer"/>
+	</column>
+	<column name="article_published_id">
+		<type name="integer"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="published_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="published">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__article" type="pk-constr" table="common.article">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<extension name="ltree" handles-type="true">
+	<schema name="common"/>
+</extension>
+
+<table name="rubric">
+	<schema name="common"/>
+	<position x="900.5" y="2100.25"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="project_id">
+		<type name="integer"/>
+	</column>
+	<column name="rubric_data_id">
+		<type name="integer"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="path">
+		<type name="common.ltree"/>
+	</column>
+	<column name="enabled">
+		<type name="boolean"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="modified_at">
+		<type name="timestamptz"/>
+	</column>
+	<constraint name="pk__rubric" type="pk-constr" table="common.rubric">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="rubric_data">
+	<schema name="common"/>
+	<appended-sql><![CDATA[CREATE INDEX index_fti_rubric_data_short_name
+ON common.rubric_data
+USING gin
+(to_tsvector('utf8_russian'::regconfig, short_name::text));
+
+CREATE INDEX index_fti_rubric_data_description
+ON common.rubric_data
+USING gin
+(to_tsvector('utf8_russian'::regconfig, description::text));]]></appended-sql>
+	<position x="446.25" y="2017.17"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="short_name">
+		<type name="varchar" length="64"/>
+	</column>
+	<column name="description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_keywords">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_description">
+		<type name="varchar" length="256"/>
+	</column>
+	<constraint name="pk__rubric_data" type="pk-constr" table="common.rubric_data">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="article_published">
+	<schema name="common"/>
+	<appended-sql><![CDATA[CREATE INDEX index_fti_articles_published_title ON common.article_published USING GIN (to_tsvector('utf8_russian', title));
+CREATE INDEX index_fti_article_published_anons ON common.article_published USING GIN (to_tsvector('utf8_russian', anons));
+CREATE INDEX index_fti_article_published_text ON common.article_published USING GIN (to_tsvector('utf8_russian', text));
+CREATE INDEX index_fti_article_published_meta_description ON common.article_published USING GIN (to_tsvector('utf8_russian', meta_description));
+CREATE INDEX index_fti_article_published_meta_keywords ON common.article_published USING GIN (to_tsvector('utf8_russian', meta_keywords));]]></appended-sql>
+	<position x="467.25" y="2511.5"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="anons">
+		<type name="varchar" length="1024"/>
+	</column>
+	<column name="text">
+		<type name="text"/>
+	</column>
+	<column name="author">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_keywords">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="rubrics">
+		<type name="users.hstore"/>
+	</column>
+	<column name="modified_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="preview">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="images">
+		<type name="users.hstore"/>
+	</column>
+	<constraint name="pk__article_published" type="pk-constr" table="common.article_published">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="news_draft">
+	<schema name="common"/>
+	<appended-sql><![CDATA[CREATE INDEX index_fti_news_draft_title ON common.news_draft USING GIN (to_tsvector('utf8_russian', title));
+CREATE INDEX index_fti_news_draft_anons ON common.news_draft USING GIN (to_tsvector('utf8_russian', anons));
+CREATE INDEX index_fti_news_draft_text ON common.news_draft USING GIN (to_tsvector('utf8_russian', text));
+CREATE INDEX index_fti_news_draft_meta_description ON common.news_draft USING GIN (to_tsvector('utf8_russian', meta_description));
+CREATE INDEX index_fti_news_draft_meta_keywords ON common.news_draft USING GIN (to_tsvector('utf8_russian', meta_keywords));]]></appended-sql>
+	<position x="475.5" y="3331.34"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="news_id">
+		<type name="integer"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="anons">
+		<type name="varchar" length="1024"/>
+	</column>
+	<column name="text">
+		<type name="text"/>
+	</column>
+	<column name="meta_description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_keywords">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="rubrics">
+		<type name="users.hstore"/>
+	</column>
+	<column name="modified_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="priview">
+		<type name="varchar" length="256"/>
+	</column>
+	<constraint name="pk__news_draft" type="pk-constr" table="common.news_draft">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="news">
+	<schema name="common"/>
+	<position x="1129" y="2645.31"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="project_id">
+		<type name="smallint"/>
+	</column>
+	<column name="news_draft_id">
+		<type name="integer"/>
+	</column>
+	<column name="news_published_id">
+		<type name="integer"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="published_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="published">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__news" type="pk-constr" table="common.news">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="news_published">
+	<schema name="common"/>
+	<appended-sql><![CDATA[CREATE INDEX index_fti_news_published_title ON common.news_published USING GIN (to_tsvector('utf8_russian', title));
+CREATE INDEX index_fti_news_published_anons ON common.news_published USING GIN (to_tsvector('utf8_russian', anons));
+CREATE INDEX index_fti_news_published_text ON common.news_published USING GIN (to_tsvector('utf8_russian', text));
+CREATE INDEX index_fti_news_published_meta_description ON common.news_published USING GIN (to_tsvector('utf8_russian', meta_description));
+CREATE INDEX index_fti_news_published_meta_keywords ON common.news_published USING GIN (to_tsvector('utf8_russian', meta_keywords));]]></appended-sql>
+	<position x="480.83" y="3077.08"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="admin_id">
+		<type name="integer"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="anons">
+		<type name="varchar" length="1024"/>
+	</column>
+	<column name="text">
+		<type name="text"/>
+	</column>
+	<column name="meta_description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="meta_keywords">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="rubrics">
+		<type name="users.hstore"/>
+	</column>
+	<column name="modified_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="priview">
+		<type name="varchar" length="256"/>
+	</column>
+	<constraint name="pk__news_published" type="pk-constr" table="common.news_published">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index__project_name" table="common.project"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="name"/>
+		</idxelement>
+</index>
+
+<index name="index__role_name" table="users.role"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="name"/>
+		</idxelement>
+</index>
+
+<index name="index__module_operation_role_id" table="users.module_operation"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="name"/>
+		</idxelement>
+</index>
+
+<index name="index__module_operation_module_id" table="users.module_operation"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="module_id"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_password" table="users.admin"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="password"/>
+		</idxelement>
+</index>
+
+<index name="index__admin_login" table="users.admin"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="login"/>
+		</idxelement>
+</index>
+
+<index name="index__rubric_path" table="common.rubric"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="path"/>
+		</idxelement>
+</index>
+
+<index name="index__rubric_name" table="common.rubric"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="name"/>
+		</idxelement>
+</index>
+
+<index name="index__rubric_rubric_data_id" table="common.rubric"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="rubric_data_id"/>
+		</idxelement>
+</index>
+
+<index name="index_rubric_data_short_name" table="common.rubric_data"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="short_name"/>
+		</idxelement>
+</index>
+
+<index name="index__article_created_ad" table="common.article"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="created_at"/>
+		</idxelement>
+</index>
+
+<index name="index_article_published_at" table="common.article"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="published_at"/>
+		</idxelement>
+</index>
+
+<index name="index__article_published_rubrics" table="common.article_published"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="rubrics"/>
+		</idxelement>
+</index>
+
+<index name="index__articles_published_modified_at" table="common.article_published"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="modified_at"/>
+		</idxelement>
+</index>
+
+<index name="index__article_draft_rubrics" table="common.article_draft"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="rubrics"/>
+		</idxelement>
+</index>
+
+<index name="index__article_draft_modified_at" table="common.article_draft"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="modified_at"/>
+		</idxelement>
+</index>
+
+<index name="index__news_published_modified_at" table="common.news_published"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="modified_at"/>
+		</idxelement>
+</index>
+
+<index name="index__news_published_rubrics" table="common.news_published"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="rubrics"/>
+		</idxelement>
+</index>
+
+<index name="index__news_draft_modified_at" table="common.news_draft"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="modified_at"/>
+		</idxelement>
+</index>
+
+<index name="index__news_draft_rubrics" table="common.news_draft"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="rubrics"/>
+		</idxelement>
+</index>
+
+<schema name="multimedia" rect-visible="true" fill-color="#e1e1e1">
+</schema>
+
+<table name="images">
+	<schema name="multimedia"/>
+	<appended-sql><![CDATA[CREATE INDEX index__fti_images_title ON multimedia.images
+USING GIN (to_tsvector('utf8_russian' :: REGCONFIG, title :: TEXT));
+
+CREATE INDEX index__fti_images_description ON multimedia.images
+USING GIN (to_tsvector('utf8_russian' :: REGCONFIG, description :: TEXT));
+
+CREATE INDEX index__fti_images_tags ON multimedia.images
+USING GIN (to_tsvector('utf8_russian' :: REGCONFIG, tags :: TEXT));
+]]></appended-sql>
+	<position x="688.75" y="3631.25"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="tags">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="mime_type">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="source_file">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="prepared_file">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="ico_file">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="uploaded_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="root_directory">
+		<type name="varchar" length="256"/>
+	</column>
+	<constraint name="pk__images" type="pk-constr" table="multimedia.images">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="cropped_images">
+	<schema name="multimedia"/>
+	<position x="357.75" y="3777.45"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="images_id" not-null="true">
+		<type name="bigint"/>
+	</column>
+	<column name="images_size_id" not-null="true">
+		<type name="bigint"/>
+	</column>
+	<column name="path">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="cropped_at">
+		<type name="timestamptz"/>
+	</column>
+	<constraint name="pk__cropped_images" type="pk-constr" table="multimedia.cropped_images">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="images_size">
+	<schema name="multimedia"/>
+	<position x="90.87" y="3599.95"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="width">
+		<type name="integer"/>
+	</column>
+	<column name="height">
+		<type name="integer"/>
+	</column>
+	<constraint name="pk__sizes_to_crop_image" type="pk-constr" table="multimedia.images_size">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index__images_id" table="multimedia.cropped_images"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="images_id"/>
+		</idxelement>
+</index>
+
+<index name="index__images_size_id" table="multimedia.cropped_images"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="true" nulls-first="false" asc-order="true">
+			<column name="images_size_id"/>
+		</idxelement>
+</index>
+
+<table name="unsorted">
+	<schema name="multimedia"/>
+	<position x="130.06" y="3903.95"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="tags">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="description">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="title">
+		<type name="varchar"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<constraint name="pk__unsorted_id" type="pk-constr" table="multimedia.unsorted">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dimension_newsmaker">
+	<schema name="common"/>
+	<position x="492.5" y="2156.25"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="article_id">
+		<type name="integer"/>
+	</column>
+	<column name="newsmaker_id">
+		<type name="integer"/>
+	</column>
+	<constraint name="pk__dimension_newsmaker" type="pk-constr" table="common.dimension_newsmaker">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<schema name="social" rect-visible="true" fill-color="#828282">
+</schema>
+
+<table name="app">
+	<schema name="social"/>
+	<position x="43.75" y="463.83"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="social_network" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="app_id" not-null="true">
+		<type name="bigint" length="1024"/>
+	</column>
+	<column name="app_secret_key" not-null="true">
+		<type name="text"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="created_admin_id">
+		<type name="bigint"/>
+	</column>
+	<column name="picture">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__app" type="pk-constr" table="social.app">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="app_admin">
+	<schema name="social"/>
+	<position x="448" y="303.28"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="app_id">
+		<type name="smallint"/>
+	</column>
+	<column name="app_access_token">
+		<type name="text"/>
+	</column>
+	<column name="name">
+		<type name="text"/>
+	</column>
+	<column name="social_admin_id">
+		<type name="bigint"/>
+	</column>
+	<constraint name="pk_app_admin" type="pk-constr" table="social.app_admin">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="app_admin_pages">
+	<schema name="social"/>
+	<position x="835.75" y="43"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="app_admin_id">
+		<type name="smallint"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="category">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="page_id">
+		<type name="bigint"/>
+	</column>
+	<column name="access_token">
+		<type name="text"/>
+	</column>
+	<column name="permissions">
+		<type name="users.hstore"/>
+	</column>
+	<constraint name="pk__admin_pages" type="pk-constr" table="social.app_admin_pages">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="app_admin_group">
+	<schema name="social"/>
+	<position x="827.75" y="575.99"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="app_admin_id">
+		<type name="smallint"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="privacy">
+		<type name="varchar" length="128"/>
+	</column>
+	<column name="group_id">
+		<type name="bigint"/>
+	</column>
+	<constraint name="pk__app_admin_group" type="pk-constr" table="social.app_admin_group">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="flow">
+	<schema name="social"/>
+	<position x="1932.5" y="338.83"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="access_token">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="secret_key">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="deleted">
+		<type name="boolean"/>
+	</column>
+	<constraint name="pk__flow" type="pk-constr" table="social.flow">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="flow_dimension_group">
+	<schema name="social"/>
+	<position x="1672.5" y="447.58"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="flow_id">
+		<type name="bigint"/>
+	</column>
+	<column name="group_id">
+		<type name="bigint"/>
+	</column>
+	<column name="post_id">
+		<type name="varchar"/>
+	</column>
+	<constraint name="pk_flow_dimension_group" type="pk-constr" table="social.flow_dimension_group">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="flow_dimension_page">
+	<schema name="social"/>
+	<position x="1671.25" y="73.83"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="flow_id">
+		<type name="bigint"/>
+	</column>
+	<column name="page_id">
+		<type name="bigint"/>
+	</column>
+	<constraint name="pk_flow_dimension_page" type="pk-constr" table="social.flow_dimension_page">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="published_link">
+	<schema name="social"/>
+	<position x="1576.25" y="213.83"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="flow_id">
+		<type name="smallint"/>
+	</column>
+	<column name="description">
+		<type name="varchar" length="256"/>
+	</column>
+	<column name="link_url">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="img_url">
+		<type name="varchar" length="512"/>
+	</column>
+	<column name="published">
+		<type name="boolean"/>
+	</column>
+	<column name="published_at">
+		<type name="timestamptz"/>
+	</column>
+	<column name="created_at">
+		<type name="timestamptz"/>
+	</column>
+	<constraint name="pk__published_link" type="pk-constr" table="social.published_link">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="published_data">
+	<schema name="social"/>
+	<position x="1240" y="273.83"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="published_link_id">
+		<type name="bigint"/>
+	</column>
+	<column name="social_network">
+		<type name="smallint"/>
+	</column>
+	<column name="app_admin_pages_id">
+		<type name="bigint"/>
+	</column>
+	<column name="app_admin_group_id">
+		<type name="bigint"/>
+	</column>
+	<column name="post_id">
+		<type name="varchar"/>
+	</column>
+	<constraint name="pk__published_data" type="pk-constr" table="social.published_data">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk__user_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.user" table="users.user_info">
+	<columns names="user_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="users.admin_profile">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__auth_type_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.auth_type" table="users.auth_common">
+	<columns names="auth_type_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__user_info_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.user_info" table="users.auth_common">
+	<columns names="user_info_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__module_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.module" table="users.module_operation">
+	<columns names="module_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__role_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.role" table="users.module_operation">
+	<columns names="role_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__module_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.module" table="common.project_module">
+	<columns names="module_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__project_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.project" table="common.project_module">
+	<columns names="project_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="users.admin_role">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__role_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.role" table="users.admin_role">
+	<columns names="role_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_user_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.user" table="users.user_registration_facts">
+	<columns names="user_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__project_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.project" table="users.user_registration_facts">
+	<columns names="project_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="logs.admin_auth_logs">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__black_ip_list_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.black_ip_list" table="logs.admin_auth_logs">
+	<columns names="black_ip_list_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__pereferred_ip_address" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.white_ip_list" table="logs.admin_auth_logs">
+	<columns names="white_ip_list_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_user_code_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin_code" table="logs.admin_auth_logs">
+	<columns names="admin_code_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="users.admin_code">
+	<columns names="user_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__article_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.article" table="common.article_draft">
+	<columns names="article_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="common.article_draft">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__article_draft_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.article_draft" table="common.article">
+	<columns names="article_draft_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__project_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.project" table="common.article">
+	<columns names="project_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__article_published_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.article_published" table="common.article">
+	<columns names="article_published_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__rubric_data_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.rubric_data" table="common.rubric">
+	<columns names="rubric_data_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__project_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.project" table="common.rubric">
+	<columns names="project_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="common.article_published">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__news_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.news" table="common.news_draft">
+	<columns names="news_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="common.news_draft">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__project_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.project" table="common.news">
+	<columns names="project_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__news_draft_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.news_draft" table="common.news">
+	<columns names="news_draft_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__news_published_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.news_published" table="common.news">
+	<columns names="news_published_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="common.news_published">
+	<columns names="admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__images_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="multimedia.images" table="multimedia.cropped_images">
+	<columns names="images_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__images_size_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="multimedia.images_size" table="multimedia.cropped_images">
+	<columns names="images_size_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__article_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.article" table="common.dimension_newsmaker">
+	<columns names="article_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__newsmaker_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="common.newsmaker" table="common.dimension_newsmaker">
+	<columns names="newsmaker_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_admin_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="users.admin" table="social.app">
+	<columns names="created_admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app" table="social.app_admin">
+	<columns names="app_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin" table="social.app_admin_pages">
+	<columns names="app_admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin" table="social.app_admin_group">
+	<columns names="app_admin_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_flow" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.flow" table="social.flow_dimension_group">
+	<columns names="flow_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin_group" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin_group" table="social.flow_dimension_group">
+	<columns names="group_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__flow" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.flow" table="social.flow_dimension_page">
+	<columns names="flow_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin_pages" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin_pages" table="social.flow_dimension_page">
+	<columns names="page_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__flow" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.flow" table="social.published_link">
+	<columns names="flow_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__published_link" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.published_link" table="social.published_data">
+	<columns names="published_link_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin_pages" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin_pages" table="social.published_data">
+	<columns names="app_admin_pages_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk__app_admin_group" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="social.app_admin_group" table="social.published_data">
+	<columns names="app_admin_group_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_user_info_user" type="relfk"
+	 src-table="users.user_info"
+	 dst-table="users.user"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-91.8242" y="36.0715"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_profile_admin" type="relfk"
+	 src-table="users.admin_profile"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-73.8043" y="34.6106"/>
+	</label>
+</relationship>
+
+<relationship name="rel_auth_common_auth_type" type="relfk"
+	 src-table="users.auth_common"
+	 dst-table="users.auth_type"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="104.549" y="9.68151"/>
+	</label>
+</relationship>
+
+<relationship name="rel_auth_common_user_info" type="relfk"
+	 src-table="users.auth_common"
+	 dst-table="users.user_info"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="119.793" y="-37.2786"/>
+	</label>
+</relationship>
+
+<relationship name="rel_module_operation_module" type="relfk"
+	 src-table="users.module_operation"
+	 dst-table="common.module"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="77.0528" y="-72.4986"/>
+	</label>
+</relationship>
+
+<relationship name="rel_module_operation_role" type="relfk"
+	 src-table="users.module_operation"
+	 dst-table="users.role"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-105.349" y="-11.682"/>
+	</label>
+</relationship>
+
+<relationship name="rel_project_module_module" type="relfk"
+	 src-table="common.project_module"
+	 dst-table="common.module"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="49.2457" y="-72.1985"/>
+	</label>
+</relationship>
+
+<relationship name="rel_project_module_project" type="relfk"
+	 src-table="common.project_module"
+	 dst-table="common.project"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="17.8207" y="-153.614"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_role_admin" type="relfk"
+	 src-table="users.admin_role"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-71.4344" y="16.8425"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_role_role" type="relfk"
+	 src-table="users.admin_role"
+	 dst-table="users.role"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="91.1056" y="-29.319"/>
+	</label>
+</relationship>
+
+<relationship name="rel_user_registration_facts_user" type="relfk"
+	 src-table="users.user_registration_facts"
+	 dst-table="users.user"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="134.606" y="-16.235"/>
+	</label>
+</relationship>
+
+<relationship name="rel_user_registration_facts_project" type="relfk"
+	 src-table="users.user_registration_facts"
+	 dst-table="common.project"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="149.536" y="29.8513"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_auth_logs_admin" type="relfk"
+	 src-table="logs.admin_auth_logs"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-27.3493" y="-292.448"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_auth_logs_black_ip_list" type="relfk"
+	 src-table="logs.admin_auth_logs"
+	 dst-table="users.black_ip_list"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="87.6378" y="56.8765"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_auth_logs_white_ip_list" type="relfk"
+	 src-table="logs.admin_auth_logs"
+	 dst-table="users.white_ip_list"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="51.0528" y="86.6264"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_auth_logs_admin_code" type="relfk"
+	 src-table="logs.admin_auth_logs"
+	 dst-table="users.admin_code"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="112.648" y="-90.3415"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_code_admin" type="relfk"
+	 src-table="users.admin_code"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_article_draft_article" type="relfk"
+	 src-table="common.article_draft"
+	 dst-table="common.article"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="121.643" y="-35.3138"/>
+	</label>
+</relationship>
+
+<relationship name="rel_article_project" type="relfk"
+	 src-table="common.article"
+	 dst-table="common.project"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-89.8759" y="-58.0386"/>
+	</label>
+</relationship>
+
+<relationship name="rel_article_article_published" type="relfk"
+	 src-table="common.article"
+	 dst-table="common.article_published"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-105.299" y="-28.8936"/>
+	</label>
+</relationship>
+
+<relationship name="rel_rubric_rubric_data" type="relfk"
+	 src-table="common.rubric"
+	 dst-table="common.rubric_data"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="83.7507" y="-55.9087"/>
+	</label>
+</relationship>
+
+<relationship name="rel_news_project" type="relfk"
+	 src-table="common.news"
+	 dst-table="common.project"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-126.709" y="-2.99882"/>
+	</label>
+</relationship>
+
+<relationship name="rel_news_draft_news" type="relfk"
+	 src-table="common.news_draft"
+	 dst-table="common.news"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="32.9757" y="46.9262"/>
+	</label>
+</relationship>
+
+<relationship name="rel_news_news_published" type="relfk"
+	 src-table="common.news"
+	 dst-table="common.news_published"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-98.1721" y="-45.3938"/>
+	</label>
+</relationship>
+
+<relationship name="rel_rubric_project" type="relfk"
+	 src-table="common.rubric"
+	 dst-table="common.project"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-20.9594" y="-101.719"/>
+	</label>
+</relationship>
+
+<relationship name="rel_article_published_admin" type="relfk"
+	 src-table="common.article_published"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="205.316" y="431.301"/>
+	</label>
+</relationship>
+
+<relationship name="rel_article_draft_admin" type="relfk"
+	 src-table="common.article_draft"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="205.274" y="567.131"/>
+	</label>
+</relationship>
+
+<relationship name="rel_news_published_admin" type="relfk"
+	 src-table="common.news_published"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="213.776" y="709.761"/>
+	</label>
+</relationship>
+
+<relationship name="rel_news_draft_admin" type="relfk"
+	 src-table="common.news_draft"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="197.691" y="836.881"/>
+	</label>
+</relationship>
+
+<relationship name="rel_cropped_images_images" type="relfk"
+	 src-table="multimedia.cropped_images"
+	 dst-table="multimedia.images"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-118.124" y="-27.0486"/>
+	</label>
+</relationship>
+
+<relationship name="rel_cropped_images_images_size" type="relfk"
+	 src-table="multimedia.cropped_images"
+	 dst-table="multimedia.images_size"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="122.316" y="-64.6487"/>
+	</label>
+</relationship>
+
+<relationship name="rel_dimension_newsmaker_article" type="relfk"
+	 src-table="common.dimension_newsmaker"
+	 dst-table="common.article"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="145.959" y="1.48141"/>
+	</label>
+</relationship>
+
+<relationship name="rel_dimension_newsmaker_newsmaker" type="relfk"
+	 src-table="common.dimension_newsmaker"
+	 dst-table="common.newsmaker"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="148.286" y="-28.0786"/>
+	</label>
+</relationship>
+
+<relationship name="rel_app_admin_app" type="relfk"
+	 src-table="social.app_admin"
+	 dst-table="social.app"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-88.3743" y="-58.6736"/>
+	</label>
+</relationship>
+
+<relationship name="rel_admin_pages_app_admin" type="relfk"
+	 src-table="social.app_admin_pages"
+	 dst-table="social.app_admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-117.249" y="-68.8836"/>
+	</label>
+</relationship>
+
+<relationship name="rel_app_admin_group_app_admin" type="relfk"
+	 src-table="social.app_admin_group"
+	 dst-table="social.app_admin"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-176.249" y="-17.2537"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flow_dimension_group_flow" type="relfk"
+	 src-table="social.flow_dimension_group"
+	 dst-table="social.flow"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="88.7007" y="11.0512"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flow_dimension_page_flow" type="relfk"
+	 src-table="social.flow_dimension_page"
+	 dst-table="social.flow"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="89.8257" y="-65.1988"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flow_dimension_group_app_admin_group" type="relfk"
+	 src-table="social.flow_dimension_group"
+	 dst-table="social.app_admin_group"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-31.6243" y="-75.1536"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flow_dimension_page_app_admin_pages" type="relfk"
+	 src-table="social.flow_dimension_page"
+	 dst-table="social.app_admin_pages"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-153.749" y="-79.9087"/>
+	</label>
+</relationship>
+
+<relationship name="rel_published_link_flow" type="relfk"
+	 src-table="social.published_link"
+	 dst-table="social.flow"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-16.9993" y="34.8012"/>
+	</label>
+</relationship>
+
+<relationship name="rel_published_data_published_link" type="relfk"
+	 src-table="social.published_data"
+	 dst-table="social.published_link"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-148.249" y="-71.4488"/>
+	</label>
+</relationship>
+
+<relationship name="rel_published_data_app_admin_pages" type="relfk"
+	 src-table="social.published_data"
+	 dst-table="social.app_admin_pages"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-142.874" y="1.21626"/>
+	</label>
+</relationship>
+
+<relationship name="rel_published_data_app_admin_group" type="relfk"
+	 src-table="social.published_data"
+	 dst-table="social.app_admin_group"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-124.499" y="-74.6536"/>
+	</label>
+</relationship>
+
+<relationship name="rel_app_admin" type="relfk"
+	 src-table="social.app"
+	 dst-table="users.admin"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

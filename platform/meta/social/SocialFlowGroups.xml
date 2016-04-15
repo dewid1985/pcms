@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialFlowGroups" table="social.flow_dimension_group">
+            <properties>
+                <identifier name="id"/>
+                <property name="flow" column="flow_id" type="PlatformSocialFlow" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="group" column="group_id" type="PlatformSocialAppAdminGroup" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

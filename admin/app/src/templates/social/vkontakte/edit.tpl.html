@@ -1,0 +1,121 @@
+<?php
+/**
+ * @var PartViewer $partViewer
+ * @var PlatformSocialApp $app
+ */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Приложения</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Добавить приложение из социальных сетей
+                </div>
+                <div class="panel-body">
+                    <form id="social_app_add_form" method="post" enctype="multipart/form-data">
+                        <div id="edit"></div>
+                        <input id="app" value="<?php echo $app->getId(); ?>" hidden/>
+                        <div class="col-md-2 text-center">
+                            <img id="app_ico_img" class="img-thumbnail" alt="140x140" data-src="holder.js/140x140"
+                                 style="width: auto; height: auto;"
+                                 src="<?php echo $app->getIco(); ?>" data-holder-rendered="true">
+                            <br>
+                            <div class="form-group">
+                                <input id="ico_app_file" type="file" style="display: none;"/>
+                                <div id="icoAppFile"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Название приложения</label>
+                                <input type="text" class="form-control" id="app_name"
+                                       placeholder="example: Posting in facebook.com"
+                                       value="<?php echo $app->getName() ?>" required>
+                                <div id="name"></div>
+                            </div>
+                            <div class="form-group">
+                                <select id="social_network" class="form-control">
+                                </select>
+                                <input type="text" id="social_network_name"
+                                       value="<?php echo $app->getSocialNetwork()->getId() ?>" hidden>
+                                <div id="socialNetwork"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">ID Приложения</label>
+                                <input
+                                    value="<?php echo $app->getAppId() ?>"
+                                    type="text" class="form-control" id="app_id"
+                                    placeholder="App Id" disabled>
+                                <div id="appId"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Секретный ключ</label>
+                                <input
+                                    value="<?php echo $app->getAppSecretKey(); ?>"
+                                    type="text" class="form-control" id="app_secret_key"
+                                    placeholder="Secret Key" disabled>
+                                <div id="appSecretKey"></div>
+                            </div>
+                            <div class="well">
+
+                                <div id="additionally_data">
+                                    <h4>Дополнительно</h4>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Тип приложения</label>
+                                        <select id="app_type" class="form-control" disabled>
+                                            <option value="none" ="">Нет</option>
+                                            <option value="web">Web-сайт</option>
+                                            <option value="standalone" selected>Standalone-приложение</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nameAdmin">Имя администратора</label>
+                                        <button onclick="SocialApp.getInfoUser(event)" id="get_user_info"
+                                                style="margin-left: 10px" disabled><i class="glyphicon glyphicon-user"></i>
+                                        </button>
+                                        <input type="text" class="form-control"  value="<?php
+                                            echo  $app->getAppAdmin()->getName();
+                                        ?>" id="app_admin_name" disabled>
+                                        <div id="appAdminName"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="socialAdminId">ID пользователя в соц. сети</label>
+                                        <input type="text" class="form-control"  value="<?php
+                                            echo  $app->getAppAdmin()->getSocialAdminId();
+                                        ?>" id="app_social_admin_id" disabled>
+                                        <div id="appSocialAdminId"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="accessToken">Ключ доступа к приложению (access token)</label>
+                                        <button id="get_access_token" style="margin-left: 10px;"
+                                                onclick="SocialApp.getAccessToken(event)"><i class="fa fa-key"></i>
+                                        </button>
+                                        <input type="text" class="form-control" value="<?php
+                                            echo  $app->getAppAdmin()->getAppAccessToken();
+                                        ?>" id="app_access_token">
+                                        <div id="appAccessToken"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="appError"></div>
+                </div>
+                <div class="panel-footer">
+                    <div class="btn btn-primary" id="update_app">
+                        <i class="fa fa-refresh"> Обновить</i>
+                    </div>
+                    <a  href="<?php echo Project::getBaseUrl().'social/app/'?>" class="btn btn-primary">
+                        <i class="fa fa-th-list"> К списку</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $partViewer->view('layouts/footer'); ?>

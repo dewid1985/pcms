@@ -1,0 +1,86 @@
+<?php
+/* @var $form Form */
+/* @var $formId string */
+/* @var $propertyList array */
+
+/* @var $propertyName string */
+/* @var $primitive BasePrimitive */
+/* @var $hasError boolean */
+$primitiveType = get_class($primitive);
+$primitiveValue = $primitive->getValue(); ?>
+<tr class="<?=$hasError ? 'errorField' : ''?>">
+	<td>
+		<?=$this->trans($objectName.'.property.'.$propertyName)?>
+		<?=$primitive->isRequired() ? '*' : ''?>:
+	</td>
+	<td>
+		<? if ($propertyName == 'id') {
+			print $form->getValue('id') ? $this->escape($form->getValue('id')->getId()) : '';
+		} elseif (
+			in_array(
+				$primitiveType,
+				array(
+					'PrimitiveIdentifier',
+					'PrimitiveIntegerIdentifier',
+					'PrimitiveScalarIdentifier'
+				)
+			)
+		) { ?>
+			<input
+				type="text"
+				name="<?=$propertyName?>"
+				value="<?=$primitiveValue ? $this->escape($primitiveValue->getId()) : ''?>" />
+		<? } elseif ($primitiveType == 'PrimitiveEnumeration' || $primitiveType == 'PrimitiveEnum') {
+			$enumList = $primitive->getList(); ?>
+			<select name="<?=$propertyName?>" class="w95">
+				<? if (!$primitive->isRequired() || !$primitiveValue) { ?>
+					<option value=""></option>
+				<? }
+				foreach ($enumList as $enumObject) {
+					$isSelected = $primitiveValue && ($enumObject->getId() == $primitiveValue->getId()); ?>
+					<option value="<?=$this->escape($enumObject->getId())?>" <?=$isSelected ? 'selected' : ''?> >
+						<?=$this->escape("{$enumObject->getId()} ({$enumObject->getName()})")?>
+					</option>
+				<? } ?>
+			</select>
+		<? } elseif ($primitiveType == 'identifierList') {
+			print "&nbsp;";
+		} elseif ($primitiveType == 'PrimitiveBoolean') { ?>
+			<input type="checkbox" name="<?=$propertyName?>" value="1" <?=$primitiveValue ? 'checked' : ''?> />
+		<? } elseif ($primitiveType == 'PrimitiveTernary') { ?>
+			<label>
+				<input type="radio" class="_ternary" value="" <?=$primitiveValue === null ? 'checked' : ''?> />
+				NULL
+			</label>
+			<label>
+				<input type="radio" class="_ternary" name="<?=$propertyName?>" value="0" <?=$primitiveValue === false ? 'checked' : ''?> />
+				FALSE
+			</label>
+			<label>
+				<input type="radio" class="_ternary" name="<?=$propertyName?>" value="1" <?=$primitiveValue === true ? 'checked' : ''?> />
+				TRUE
+			</label>
+		<? } elseif (in_array($primitiveType, array('PrimitiveHttpUrl'))) { ?>
+			<input type="text" name="<?=$propertyName?>" value="<?=$primitiveValue ? $primitiveValue->toString() : ''?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveDate'))) { ?>
+			<input type="text" class="_hasDatepicker" name="<?=$propertyName?>" value="<?=$primitiveValue ? $primitiveValue->toString() : ''?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveTimestamp'))) { ?>
+			<input type="text" class="_hasDatepickerTime" name="<?=$propertyName?>" value="<?=$primitiveValue ? $primitiveValue->toString() : ''?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveTime'))) { ?>
+			<input type="text" size="8" maxlength="8" name="<?=$propertyName?>" value="<?=$primitiveValue ? $primitiveValue->toString() : ''?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveTimestampTZ', 'PrimitiveTimestampTZM'))) {
+			if ($primitive instanceof ComplexPrimitive)
+				$primitive->setSingle();
+			?>
+			<input type="text" class="_hasDatepickerTime" name="<?=$propertyName?>" value="<?=$primitive->exportValue()?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveString', 'PrimitiveFloat', 'PrimitiveInteger'))) { ?>
+			<input type="text" name="<?=$propertyName?>" value="<?=$this->escape($primitiveValue)?>" />
+		<? } elseif (in_array($primitiveType, array('PrimitiveIdentifierList', 'PrimitiveEnumerationList', 'PrimitiveEnumList'))) { ?>
+			<?=$this->trans('Unsupported type')?>: <?=$primitiveType?>
+		<? } elseif ($primitiveType == 'PrimitiveInet') { ?>
+			<input type="text" name="<?=$propertyName?>" value="<?=$this->escape($primitive->exportValue())?>" />
+		<? } else {
+			throw new WrongStateException('Undefined primitive type: '.$primitiveType);
+		} ?>
+	</td>
+</tr>

@@ -1,0 +1,58 @@
+<?php
+/**@var PartViewer $partViewer */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Пользователи</h1>
+        </div>
+    </div>
+    <div class="row">
+        <?php if ($socialNetwork == 'facebook'): ?>
+            <?php
+            $fb = new \Facebook\Facebook($connect);
+            $helper = $fb->getRedirectLoginHelper();
+            $loginUrl = $helper->getLoginUrl($url, $permissions);
+            ?>
+            <a class="btn btn-primary" href="<?php echo $loginUrl ?>">
+                <i class="fa fa-facebook"></i>
+                Авторизовать администратора приложения
+            </a>
+        <?php elseif ($socialNetwork == 'vkontakte'): ?>
+            <button class="btn btn-primary" id="get_access_token">
+                <i class="fa fa-vk"></i>
+                Авторизовать администратора приложения
+            </button>
+            <button class="btn btn-primary" id="user_auth">
+                <i class="fa fa-vk"></i>
+                Авторизовать администратора приложения
+            </button>
+        <?php endif; ?>
+    </div>
+</div>
+<?php $partViewer->view('layouts/footer'); ?>
+
+<script language="javascript">
+    $('#get_access_token').click(function () {
+        var url = 'https://oauth.vk.com/authorize?client_id=5207091&scope=&redirect_uri=https://oauth.vk.com/blank.html&display=popup&response_type=token&v=5.44'
+        VK.UI.popup({
+            width: 665,
+            height: 370,
+            url: url
+        });
+    });
+
+    VK.init({
+        apiId: 5207091
+    });
+
+    $('#user_auth').click(function () {
+        var info = function(response){
+            console.log(response.session);
+        };
+
+        VK.Auth.login(info);
+    });
+</script>

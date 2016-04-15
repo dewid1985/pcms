@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformCommonProjectModule" table="common.project_module">
+            <properties>
+                <identifier name="id"/>
+                <property name="module" column="module_id" type="PlatformCommonModule" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="project" column="project_id" type="PlatformCommonProject" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="disabled" type="Boolean"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

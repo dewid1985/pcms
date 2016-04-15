@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaSearchOperationRequest" extends="ModuleMultimediaRequest">
+            <properties>
+                <property name="draw" type="Integer" required="true"/>
+                <property name="offset" type="Integer" required="true"/>
+                <property name="limit" type="Integer" required="true"/>
+                <property name="ofUploadedAt" type="TimestampTZ" required="false"/>
+                <property name="toUploadedAt" type="TimestampTZ" required="false"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

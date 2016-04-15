@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaCropImageOperationResponse" extends="ModuleMultimediaResponse">
+            <properties>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

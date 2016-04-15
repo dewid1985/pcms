@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformCommonRubricData" table="common.rubric_data">
+            <properties>
+                <identifier name="id" />
+                <property name="shortName" column="short_name" type="String" required="true"/>
+                <property name="metaKeywords" column="meta_keywords" type="String" required="true"/>
+                <property name="metaDescription" column="meta_description" type="String" required="true"/>
+                <property name="description" column="description" type="String" required="false"/>
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>

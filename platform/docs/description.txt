@@ -1,0 +1,236 @@
+1. Файловая структура
+--|
+  |--project--|
+  |           |--app--|
+  |           |       |--config(конфиг проекта)
+  |           |       |--font
+  |           |       |--sessions(в случае если сессия хранить в файлах)
+  |           |       |--src--|
+  |           |       |       |--classes--|
+  |           |       |       |           |--Api
+  |           |       |       |           |--Base (Базовые классы проекта)
+  |           |       |       |           |--Controllers (Контроллеры)
+  |           |       |       |           |--Helpers
+  |           |       |       |           |--Utils
+  |           |       |       |
+  |           |       |       |--exception
+  |           |       |       |--templates
+  |           |       |
+  |           |       |***include_project.inc.php
+  |           |
+  |           |--web--|
+  |                   |--css
+  |                   |--images
+  |                   |--js
+  |                   |***index.php
+  |
+  |
+  |--platform--|
+  |            |--bin(cron)
+  |            |--config(конфиги платформы)
+  |            |--docs
+  |            |--font
+  |            |--meta
+  |            |--migrations
+  |            |--src--|
+  |            |       |--classes--|
+  |            |       |           |--Auto(файлы которые не рекомендуется трогать кроме, ***schema.php)
+  |            |       |           |--Base(Базовые классы платформы)
+  |            |       |           |--Business(Классы генерируются, пишется бизнес логика)
+  |            |       |           |--DAOs(Data Access Object классы генерируются)
+  |            |       |           |--Enumeration
+  |            |       |           |--Exception
+  |            |       |           |--Flow
+  |            |       |           |--Helpers
+  |            |       |           |--Modules
+  |            |       |           |--Processors
+  |            |       |           |--Proto
+  |            |       |           |--Response
+  |            |       |           |--Utils
+  |            |       |
+  |            |       |--interfaces
+  |            |
+  |            |***include_platform.php
+  |
+  |
+  |--onPHP--|
+            |--onphp(https://github.com/onPHP/onphp-framework)
+            |--onphputils(https://github.com/AlexeyDsov/onPHPUtils)
+
+
+2. Автогенерация кода
+
+табличка в базе
+
+схема test табличка clients
+
+CREATE TABLE test.clients
+(
+    id serial,
+    name VARCHAR (64) NOT NULL ,
+    email VARCHAR (64) NOT NULL
+);
+
+|******|******|*******|
+|  id  | name | email |
+|******|******|*******|
+|   1  | Вася | 1@1.t |
+|******|******|*******|
+|   2  | Петя | 2@2.t |
+|******|******|*******|
+
+
+в каталоге meta создаем каталог с название схемы test в нем файл xml с названием таблички.
+/meta/test/Clients.xml
+
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformTestClients" table="test.clients">
+            <properties>
+                <identifier name="id" />
+                <property name="name" column="name" type="String" size="64"/>
+                <property name="email" column="email" type="String" size="64"/>
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>
+
+для того что бы сгенерировать классы нам не обходимо запустить файл /meta/build_meta.sh
+сгенерируются классы которые разложатся по папкам /src/classes/Auto..., /src/classes/DAOs, /src/classes/Business,
+/src/classes/Proto.
+
+получить данные из таблички
+<?php
+    PlatformTestClients::dao()->getById(1)->getName() /**результат: Вася**/
+    PlatformTestClients::dao()->getById(1)->getEmail() /**результат: 1@1.t**/
+?>
+
+связывание таблиц
+
+CREATE TABLE test.comment
+(
+    id serial,
+    client_id INT NOT NULL,
+    comment TEXT NOT NULL ,
+);
+ALTER TABLE test.comment ADD FOREIGN KEY (client_id) REFERENCES test.clients(id);
+
+|******|***********|*********|
+|  id  | client_id | comment |
+|******|***********|*********|
+|   1  | 1         | bla bla |
+|******|***********|*********|
+|   2  | 2         | бла бла |
+|******|***********|*********|
+|   3  | 1         | sos sos |
+|******|***********|*********|
+|   4  | 1         | сос сос |
+|******|***********|*********|
+
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformTestСomment" table="test.comment">
+            <properties>
+                <identifier name="id" />
+                <property name="client" column="client_id"  type="PlatformTestClients" relation="OneToOne"
+                                          fetch="lazy" required="true"/>
+                <property name="comment" column="email" type="String" size="64"/>
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>
+
+генерируем классы /meta/build_meta.sh
+
+<?
+    /** получаем комментарий **/
+    PlatformTestСomment::dao()->getById(4)->getComment() /** результат `сос сос`**/
+    /** получаем клиента и атора комментария**/
+    PlatformTestСomment::dao()->getById(4)->getClient()->getName() /** результат `Вася`**/
+    /** получаем емайл клиента через комментарий**/
+    PlatformTestСomment::dao()->getById(2)->getClient()->getEmail() /** результат 'Петя'**/
+?>
+
+Так же генерируем request, response используем патерн ObjectValue
+пример
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleRubricsAddOperationRequest" extends="ModuleRubricsRequest">
+            <properties>
+                <property name="parent" type="String"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>
+
+3. Использование UML
+для построение UML диаграммы базы данных при разработки использовали pg_modeler
+https://github.com/pgmodeler/pgmodeler
+файл с проектом /platform/docs/newPCMS_fixed.dbm
+
+Обязательные действия.
+    1. Вносим изменения в структуру бд. Пишем скрипт миграции *.sql /platform/migration
+    2. Добавляем изменения в uml проект
+    3. Пишем мету
+    3. Генерируем классы
+
+    Пример 1
+        1. Добавляю поле в таблицу (пишу скрипт миграции)
+        2. Запускаю pg_modeler добавляю поле в соответствующую таблицу.
+        3. Добавляю свойство в соответствующию мету
+        4. Генерирую классы
+
+    Пример 2
+        1. Добавляю таблицу. Проектирую ее в pg_modeler получаю source.
+        2. Сохраняю его в migration в *.sql
+        3. Cоздаю мету *.xml
+        4. Прописываю новую мету в конфиге мет /platform/meta/config.meta.xml
+        5. Генерирую классы
+
+
+
+4. Создание Модуля
+Модуль создается в каталоге /platform/src/classes/Modules
+
+Структура Модуля
+
+    Operations
+    Каталог операци
+
+    Visitor
+    Каталог визитеров
+
+    {NameModule}.class.php
+    Класс модуля унаследован от BaseModule имеет статитческий метод me() который возвращает синглтон модуля
+
+    {NameModule} + Operation.class.php
+    Класс определения операции модуля с инициализацией главного класса модуля
+
+    {NameModule} + OperationEnum.class.php
+    Определение операций модуля
+
+    {NameModule} + Visitor.class.php
+    Определение визитеров модуля
+
+    Settings.config.php
+    Настройки. По инициализции визитеров по операциям.
+
+Логика
+Собираем реквест из контроллера -> Передаем его в модуль -> Инициализируем модуль -> Получаем из модуля респонс
+
+Работа модуля
+Выполняет визитер реквеста (в случае если нам не обходимо обработать реквест до операции,
+преобразование производится в визитере) -> Выполняется операция в которой собирается респонс -> Выполняет визитер
+респонса (преобразовывает респонс или приводит его к нужному виду или переопределяет определенное свойство по условию)
+
+-->Controller(prepare Request module)-->set request module-->module init (NameModule)-->Module Request visitor visit
+--> Module operation -->set response module --> Module Response visitor visit -->get Response Module

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersAdminRole" table="users.admin_role">
+            <properties>
+                <identifier name="id"/>
+                <property name="admin" column="admin_id" type="PlatformUsersAdmin" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="role" column="role_id" type="PlatformUsersRole" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

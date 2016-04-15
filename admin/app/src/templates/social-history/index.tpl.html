@@ -1,0 +1,93 @@
+<?php
+/**
+ * @var PartViewer $partViewer
+ */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Ссылки</h1>
+            </div>
+        </div>
+<!--        <div class="row">-->
+<!--            <div class="panel panel-default">-->
+<!--                <div class="panel-heading">-->
+<!--                    <i class="fa fa-bars fa-fw"></i>-->
+<!--                    История-->
+<!--                </div>-->
+<!--                <div class="panel-body">-->
+<!---->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bars fa-fw"></i>
+                    История
+                </div>
+                <div class="panel-body">
+                    <table id="social-history" class="table table-striped" width="100%">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Описание</th>
+                            <th>Ссылка на материал</th>
+                            <th>Ссылка на изображение</th>
+                            <th>Опубликованна</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>Описание</th>
+                            <th>Ссылка на материал</th>
+                            <th>Ссылка на изображение</th>
+                            <th>Опубликованна</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="update-history-link" class="modal fade" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog"
+         tabindex="-1" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title">Редактирование тега</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <input type="hidden" id="edit-link-id">
+                        <div class="form-group">
+                            <label class="control-label" for="inputSuccess">Описание</label>
+                            <textarea class="form-control" rows="3"  id="edit-description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputWarning">Ссылка на материал</label>
+                            <input type="text" class="form-control" id="edit-link-url">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputError">Ссылка на изображение</label>
+                            <input type="text" class="form-control" id="edit-img-url">
+                        </div>
+                    </div>
+                    <div id="edit-tag-warning" class="form-group">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">Отмена</button>
+                    <button class="btn btn-primary" id="edit-tag-update" type="button">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $partViewer->view('layouts/footer'); ?>

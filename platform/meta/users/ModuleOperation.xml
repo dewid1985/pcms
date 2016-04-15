@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersModuleOperation" table="users.module_operation">
+            <properties>
+                <identifier name="id"/>
+                <property name="module" column="module_id" type="PlatformCommonModule" fetch="lazy" relation="OneToOne"
+                          required="true"/>
+                <property name="role" column="role_id" type="PlatformUsersRole" fetch="lazy" relation="OneToOne"
+                          required="true"/>
+                <property name="name" type="String" size="32" required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

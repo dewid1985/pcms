@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="VkResponse">
+            <properties>
+                <property name="method" type="String" required="true" />
+                <property name="postId" type="String" />
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

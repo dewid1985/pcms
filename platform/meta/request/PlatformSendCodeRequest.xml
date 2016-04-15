@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSendCodeRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="code" type="String" size="5" required="true" />
+                <property name="type" type="PlatformUsersAdminCodeTypeEnum" fetch="lazy"  relation="OneToOne" required="true" />
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

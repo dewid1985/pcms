@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialFlow" table="social.flow">
+            <properties>
+                <identifier name="id"/>
+                <property name="name" column="name" type="String" size="256" required="true"/>
+                <property name="accessToken" column="access_token" type="String" required="false"/>
+                <property name="secretKey" column="secret_key" type="String" required="false"/>
+                <property name="deleted" column="deleted" type="Boolean" default="false"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

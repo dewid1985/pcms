@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformAdminCodeRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="code" type="String" size="32" required="true"/>
+                <property name="createdAt" type="TimestampTZ" required="true"/>
+                <property name="active" type="Boolean" required="false"/>
+                <property name="type" type="PlatformUsersAdminCodeTypeEnum" fetch="lazy" relation="OneToOne"
+                          required="true"/>
+                <property name="admin" column="user_id" type="PlatformUsersAdmin" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

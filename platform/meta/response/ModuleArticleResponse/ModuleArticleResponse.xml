@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleArticleResponse" extends="PlatformBaseRequest">
+            <properties>
+                <property name="articleId" type="String"/>
+                <property name="projectId" type="String"/>
+                <property name="articleDraftId" type="String"/>
+                <property name="articlePublishedId" type="String"/>
+                <property name="publishedAt"  type="TimestampTZ"/>
+                <property name="published" type="Boolean"/>
+                <property name="rubrics" type="Hstore"/>
+                <property name="title" type="String" />
+                <property name="anons" type="String" />
+                <property name="text" type="String" />
+                <property name="metaDescription" type="String" />
+                <property name="metaKeywords" type="String"/>
+                <property name="createdAt" type="TimestampTZ"/>
+                <property name="modifiedAt" type="TimestampTZ"/>
+                <property name="preview" type="String" default="NULL"/>
+                <property name="author" type="String" />
+                <property name="adminId" type="Integer"/>
+                <property name="images" type="Hstore"/>
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

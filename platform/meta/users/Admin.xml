@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersAdmin" table="users.admin">
+            <properties>
+                <identifier name="id" />
+                <property name="login" type="String" size="32" required="true"/>
+                <property name="password" type="String"  size="256" required="true" />
+                <property name="email" type="String" size="32" required="false" />
+                <property name="phone" type="String" size="16" required="true"/>
+                <property name="xmppAccount" type="String" size="40" required="false"/>
+                <property name="blocked" type="Boolean" required="false" default="false"/>
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>

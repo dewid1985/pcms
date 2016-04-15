@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformGetArticlesResponse" extends="PlatformGetArticlesDataResponse">
+            <properties>
+                <property name="articlesId" type="String"/>
+                <property name="projectId" type="String"/>
+                <property name="createdAt"  type="TimestampTZ" />
+                <property name="modifiedAt"  type="TimestampTZ"/>
+                <property name="publishedAt"  type="TimestampTZ"/>
+                <property name="published"  type="Boolean"/>
+                <property name="rubrics" type="Hstore"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

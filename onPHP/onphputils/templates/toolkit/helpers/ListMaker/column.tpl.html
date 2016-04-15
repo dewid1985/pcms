@@ -1,0 +1,34 @@
+<?
+/* @var $propertyName string */
+/* @var $propertyList array */
+/* @var $baseUrl string */
+/* @var $urlParams array */
+/* @var $formData array */
+/* @var $objectName string */
+Assert::isTrue(isset($propertyName));
+Assert::isTrue(isset($propertyList) && is_array($propertyList));
+Assert::isTrue(isset($baseUrl) && is_string($baseUrl));
+Assert::isTrue(isset($urlParams) && is_array($urlParams));
+Assert::isTrue(isset($formData) && is_array($formData));
+
+$description = isset($propertyList[$propertyName][ListMakerProperties::OPTION_DESCRIPTION])
+	? $propertyList[$propertyName][ListMakerProperties::OPTION_DESCRIPTION]
+	: $this->trans($objectName.'.property.'.$propertyName);
+
+if (isset($propertyList[$propertyName][ListMakerProperties::OPTION_ORDERING])) {
+	$defaultSort = $propertyList[$propertyName][ListMakerProperties::OPTION_ORDERING];
+	$notDefaultSort = $defaultSort == ListMakerProperties::ORDER_ASC
+		? ListMakerProperties::ORDER_DESC
+		: ListMakerProperties::ORDER_ASC;
+	
+	$hasOrder = isset($formData[$propertyName]['order']);
+	$currentSort = isset($formData[$propertyName]['sort']) ? $formData[$propertyName]['sort'] : $defaultSort;
+	$isCurrSortDefault = $hasOrder && ($currentSort == $defaultSort);
+
+	$urlParams[$propertyName]['order'] = 1;
+	$urlParams[$propertyName]['sort'] = $isCurrSortDefault ? $notDefaultSort : $defaultSort;
+	?>
+	<a class="js-pjax" href="<?=$baseUrl?><?=http_build_query($urlParams)?>"><?=$description?></a>
+<? } else { ?>
+	<?=$description?>
+<? } ?>

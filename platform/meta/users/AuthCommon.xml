@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersAuthCommon" table="users.auth_common">
+            <properties>
+                <identifier name="id"/>
+                <property name="userInfo" column="user_info_id" type="PlatformUsersUserInfo" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="authType" column="auth_type_id" type="PlatformUsersAuthType" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="token" type="String" size="128" required="true"/>
+                <property name="refreshToken" type="String" size="128" required="false"/>
+                <property name="profileUrl" type="String" size="128" required="true"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

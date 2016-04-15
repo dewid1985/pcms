@@ -1,0 +1,50 @@
+<? /* @var $infoUrl string */
+$partViewer->view('header');
+
+/* @var $form Form */
+$formId = 'editForm'.time().rand(10000, 99999); ?>
+<form id="<?=$formId?>" method="post" action="<?=$takeUrl?>" class="js-pjax">
+	<? $this->template('Objects/SimpleObject/edit.table', array('formId' => $formId)); ?>
+	<? if (!$this->get('isAjax') && $infoObject) { ?>
+		<input type="submit" value="<?=$this->trans('Save')?>" />
+	<? } ?>
+</form>
+<? if ($this->get('isAjax') && $infoObject) {
+	$dialogName = $this->get('linker')->getDialogName($infoObject);
+	$title = $this->trans(get_class($infoObjectPrototype)).' '
+		.$this->escape($this->get('nameConverter')->get($infoObject));
+	
+	?>
+	<script type="text/javascript">
+		<?
+		$options = [
+			'title' => $this->trans('Editing')." {$title}",
+			'once' => $windowOnce,
+		];
+		
+		if ($errors = $form->getErrors()) {
+			$options['error'] = FormErrorTextAggregator::create()->getMessage($form);
+		}
+		?>
+		$(function(){
+			var options = <?=json_encode($options, JSON_FORCE_OBJECT)?>;
+			$('#<?=$dialogName?>').dialog('option', options);
+			
+			var closeDialog = <?=$closeDialog ? 'true' : 'false'?>;
+			var hasId = <?=$form->getValue('id') ? 'true' : 'false'?>;
+			var buttons = {};
+			buttons["<?=$this->trans('Save')?>"] = function() {$.sendPostForm($('#<?=$formId?>'), $('#<?=$dialogName?>'));}
+			if (hasId && !closeDialog) {
+				cancel = function() {$.tk.load({url: '<?=$infoUrl?>', id: '<?=$dialogName?>'});}
+			} else {
+				cancel = function() {$(this).dialog('close');}
+			}
+			buttons["<?=$this->trans('Cancel')?>"] = cancel;
+			$('#<?=$dialogName?>').dialog('buttons', buttons);
+		});
+	</script>
+<? } elseif ($infoObject) { ?>
+	<a href="<?=$infoUrl?>" class="js-pjax"><?=$this->trans('Cancel')?></a>
+<? } ?>
+
+<? $partViewer->view('footer'); ?>

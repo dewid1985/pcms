@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialPublishedLink" table="social.published_link">
+            <properties>
+                <identifier name="id"/>
+                <property name="flow" column="flow_id" type="PlatformSocialFlow" relation="OneToOne" fetch="lazy"
+                          required="true"/>
+                <property name="description" column="description" type="String" size="256" required="true"/>
+                <property name="linkUrl" column="link_url" type="String" size="512" required="true"/>
+                <property name="imgUrl" column="img_url" type="String" size="512" required="true"/>
+                <property name="published" column="published" type="Boolean" default="false"/>
+                <property name="publishedAt" column="published_at" type="TimestampTZ"/>
+                <property name="createdAt" column="created_at" type="TimestampTZ"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

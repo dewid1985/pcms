@@ -1,0 +1,31 @@
+<?php
+$partViewer->view('header');
+
+if ($this->get('isAjax') && $infoObject) {
+	$dialogName = $this->get('linker')->getDialogName($infoObject);
+	try {
+		$currentDialog = $this->get('linker')->getDialogName(get_class($infoObject));
+	} catch (PermissionException $e) {
+		$currentDialog = $dialogName;
+	}
+	?>
+	<div>
+		<script type="text/javascript">
+			$(function() {
+				$('#<?=$currentDialog?>').dialog('close');
+				<? if (!isset($closeDialog) || !$closeDialog) { ?>
+					$.tk.load({url: '<?=$infoUrl?>', id: '<?=$dialogName?>'});
+				<? } else { ?>
+					$('#<?=$dialogName?>').dialog('close');
+				<? } ?>
+			});
+		</script>
+	</div>
+	<?php
+} else {
+	?>
+	<h1><?=$this->trans('Wrong page')?></h1>
+	<?php
+}
+$partViewer->view('footer');
+?>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleRubricsRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="rubricId" type="Integer"/>
+                <property name="projectId" type="Integer"/>
+                <property name="adminId" type="Integer"/>
+                <property name="RubricDataId" type="Integer"/>
+                <property name="name" type="String"/>
+                <property name="path" type="String"/>
+                <property name="enabled" type="Boolean"/>
+                <property name="createdAt" type="TimestampTZ"/>
+                <property name="modifiedAt" type="TimestampTZ"/>
+                <property name="shortName" type="String"/>
+                <property name="description" type="String"/>
+                <property name="metaDescription" type="String"/>
+                <property name="metaKeywords" type="String"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialAppRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="name"  type="String" size="32" required="true"/>
+                <property name="socialNetwork" type="String" required="true"/>
+                <property name="appId" type="String" required="true"/>
+                <property name="appSecretKey"  type="String" required="true"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

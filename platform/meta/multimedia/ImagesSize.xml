@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformMultimediaImagesSize" table="multimedia.images_size">
+            <properties>
+                <identifier name="id"/>
+                <property name="name" type="String" size="32"/>
+                <property name="title" type="String" size="32"/>
+                <property name="width" type="Integer" />
+                <property name="height" type="Integer"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

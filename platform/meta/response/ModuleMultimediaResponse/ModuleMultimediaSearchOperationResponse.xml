@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaSearchOperationResponse" extends="ModuleMultimediaResponse">
+            <properties>
+                <property name="draw" type="Integer"/>
+                <property name="recordsTotal" type="Integer"/>
+                <property name="recordsFiltered" type="Integer"/>
+                <property name="data" type="String"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

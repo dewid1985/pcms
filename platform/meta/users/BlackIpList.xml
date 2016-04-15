@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformUsersBlackIpList" table="users.black_ip_list">
+            <properties>
+                <identifier name="id"/>
+                <property name="ipAddress" type="String" size="15" required="true"/>
+                <property name="expires" type="TimestampTZ" required="false"/>
+                <property name="active" type="Boolean" default="true" required="false"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

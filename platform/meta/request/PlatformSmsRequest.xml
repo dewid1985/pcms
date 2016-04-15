@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSmsRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="phone" type="String" size="17" required="true" />
+                <property name="message" type="String" size="256" required="true" />
+            </properties>
+            <pattern name="ValueObject" />
+        </class>
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformCommonArticlePublished" table="common.article_published">
+            <properties>
+                <identifier name="id"/>
+                <property name="admin" column="admin_id" type="PlatformUsersAdmin" fetch="lazy" relation="OneToOne"
+                          required="false"/>
+                <property name="title" column="title" type="String" required="true"/>
+                <property name="anons" column="anons" type="String" required="true"/>
+                <property name="text" column="text" type="String" required="true"/>
+                <property name="author" column="author" type="String" required="true"/>
+                <property name="metaDescription" column="meta_description" type="String" required="true"/>
+                <property name="metaKeywords" column="meta_keywords" type="String" required="true"/>
+                <property name="rubrics" column="rubrics" type="Hstore"/>
+                <property name="modifiedAt" column="modified_at" type="TimestampTZ"/>
+                <property name="preview" column="preview" type="String"/>
+                <property name="images" column="images" type="Hstore"/>
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+    </classes>
+</metaconfiguration>

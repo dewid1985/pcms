@@ -1,0 +1,122 @@
+<?php
+/**@var PartViewer $partViewer */
+/**@var PlatformSocialFlow|null $flow */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Поток</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <select id="flow_social_app" class="form-control">
+                        </select>
+                        <div class="panel panel-default" style="margin-top: 10px">
+                            <div class="panel-heading">
+                                Группы
+                            </div>
+                            <div class="panel-body">
+                                <section>
+                                    <pre id="no_group">Нет доступных групп</pre>
+                                    <ul id="groups" class="connected sortable list">
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="margin-top: 10px">
+                            <div class="panel-heading">
+                                Страницы
+                            </div>
+                            <div class="panel-body">
+                                <section>
+                                    <pre id="no_page">Нет доступных страниц</pre>
+                                    <ul id="pages" class="connected sortable list">
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="panel panel-danger">
+                            <div class="panel-body">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">Название потока</label>
+                                        <?php if ($flow): ?>
+                                            <input id="flow_id" value="<?php echo $flow->getId(); ?>" hidden>
+                                        <?php endif; ?>
+                                        <input type="text" class="form-control" id="flow_name"
+                                               value="<?php echo $flow ? $flow->getName() : ''; ?>"/>
+                                    </div>
+                                    <div id="name"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Группы
+                            </div>
+                            <div class="panel-body">
+                                <section>
+                                    <ul id="flow_groups" class="connected sortable list">
+                                        <?php if ($flow): ?>
+                                            <?php foreach ($flow->getGroups() as $dimension): ?>
+                                                <?php $group = $dimension->getGroup(); ?>
+                                                <li data-type="group" data-id="<?php echo $group->getId(); ?>">
+                                                    <strong><?php echo $group->getName(); ?></strong>
+                                                    <button type="button" class="drop-sortable">×</button>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Страницы
+                            </div>
+                            <div class="panel-body">
+                                <section>
+                                    <ul id="flow_pages" class="connected sortable list">
+                                        <?php if ($flow): ?>
+                                            <?php foreach ($flow->getPages() as $dimension): ?>
+                                                <?php $page = $dimension->getPage(); ?>
+                                                <li data-type="page" data-id="<?php echo $page->getId() ?>">
+                                                    <strong><?php echo $page->getName(); ?></strong>
+                                                    <button type="button" class="drop-sortable">×</button>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <?php if ($flow): ?>
+                            <div id="flow_save" class="btn btn-primary" type="submit">
+                                <i class="glyphicon glyphicon-floppy-disk"></i> Сохранить
+                            </div>
+                        <?php else: ?>
+                            <div id="flow_add" class="btn btn-primary" type="submit">
+                                <i class="glyphicon glyphicon-floppy-disk"></i> Создать
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php $partViewer->view('layouts/footer'); ?>

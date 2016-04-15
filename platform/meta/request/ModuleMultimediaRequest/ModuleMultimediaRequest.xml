@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaRequest" extends="PlatformBaseRequest">
+            <properties>
+                <property name="id" type="String"/>
+                <property name="sourceFile" type="String"/>
+                <property name="preparedFile" type="String"/>
+                <property name="icoFile" type="String"/>
+                <property name="rootDirectory" type="String" size="256"/>
+                <property name="name" type="String" size="32"/>
+                <property name="title" type="String" size="32" />
+                <property name="description" type="String" size="256" />
+                <property name="tags" type="String" size="512" />
+                <property name="uploadedAt" type="TimestampTZ" />
+                <property name="mimeType" type="String" size="128"/>
+            </properties>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

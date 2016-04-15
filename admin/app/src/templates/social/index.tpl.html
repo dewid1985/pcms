@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var PartViewer $partViewer
+ */
+?>
+<?php $partViewer->view('layouts/header'); ?>
+<?php $partViewer->view('menu/up_menu'); ?>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Приложения</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bars fa-fw"></i>
+                    Список приложений
+                    <a href="<?php echo  Project::getBaseUrl().'social/app/new'?>" class="btn btn-default pull-right">
+                        <i class="fa fa-plus"></i> Добавить приложение
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <table id="apps" class="table table-striped" width="100%">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Название приложения</th>
+                            <th>Социальная сеть</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>Название приложения</th>
+                            <th>Социальная сеть</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $partViewer->view('layouts/footer'); ?>

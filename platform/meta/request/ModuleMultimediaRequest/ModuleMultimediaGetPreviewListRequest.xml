@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="ModuleMultimediaGetPreviewListRequest" extends="ModuleMultimediaRequest">
+            <properties/>
+            <pattern name="ValueObject"/>
+        </class>
+    </classes>
+</metaconfiguration>

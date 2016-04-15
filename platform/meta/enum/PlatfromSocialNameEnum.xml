@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+
+<metaconfiguration>
+    <classes>
+        <class name="PlatformSocialNameEnum">
+            <properties>
+                <identifier />
+            </properties>
+
+            <pattern name="EnumClass" />
+        </class>
+    </classes>
+</metaconfiguration>

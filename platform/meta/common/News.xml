@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <class name="PlatformCommonNews" table="common.news">
+            <properties>
+                <identifier name="id" />
+                <property name="project" column="project_id"  type="PlatformCommonProject" relation="OneToOne"
+                          fetch="lazy" required="true"/>
+                <property name="newsDraft" column="news_draft_id" type="PlatformCommonNewsDraft" relation="OneToOne"
+                        fetch="lazy" required="false"/>
+                <property name="newsPublished" column="news_published_id" type="PlatformCommonNewsPublished" relation="OneToOne"
+                        fetch="lazy" required="false"/>
+                <property name="createdAt" column="created_at" type="TimestampTZ"/>
+                <property name="publishedAt" column="published_at" type="TimestampTZ"/>
+                <property name="published" column="published" type="Boolean"/>
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+    </classes>
+</metaconfiguration>
